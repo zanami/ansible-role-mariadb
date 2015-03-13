@@ -1,4 +1,8 @@
 ---
+# Make sure the python-pycurl and python-software-properties is installed
+- apt: name=python-pycurl update_cache=yes cache_valid_time=3600
+
+- apt: name=python-software-properties update_cache=yes cache_valid_time=3600
 
 - name: add mariadb key
   apt_key: "id=1BB943DB url=http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0xcbcb082a1bb943db state=present"
@@ -59,3 +63,6 @@
 
 - name: write root/.my.cnf
   template: src=.my.cnf.j2 dest=/root/.my.cnf owner=root group=root mode=0600
+
+- include: databases.yml
+- include: users.yml

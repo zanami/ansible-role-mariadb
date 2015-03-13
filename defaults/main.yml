@@ -21,3 +21,15 @@ mariadb_share_dir: "/usr/share/mysql"
 mariadb_skip_charset_handshake: true
 mariadb_skip_networking: false
 mariadb_socket: "/var/run/mysqld/mysqld.sock"
+
+# Databases.
+mariadb_databases: []
+# Full example:
+# mysql_databases:
+#   - { name: example, collation: utf8_general_ci, encoding: utf8, replicate: 1 }
+
+# Users
+mariadb_users: []
+# Full Example:
+# mysql_users:
+#   - { name: example, host: 127.0.0.1, password: secret, priv: *.*:USAGE }

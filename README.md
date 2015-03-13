@@ -48,6 +48,8 @@ The tasks for resetting the root password are only run on install/first activati
     mariadb_skip_charset_handshake: true
     mariadb_skip_networking: false
     mariadb_socket: "/var/run/mysqld/mysqld.sock"
+		mariadb_databases: []
+		mariadb_users: []
 
 Example Playbook
 ----------------

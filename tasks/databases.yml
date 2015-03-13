@@ -1,9 +1,8 @@
 ---
-- name: Ensure MySQL users are present.
-  mysql_user:
+- name: Ensure MySQL databases are present.
+  mysql_db:
     name: "{{ item.name }}"
-    host: "{{ item.host | default('localhost') }}"
-    password: "{{ item.password }}"
-    priv: "{{ item.priv | default('*.*:USAGE') }}"
+    collation: "{{ item.collation | default('utf8_general_ci') }}"
+    encoding: "{{ item.encoding | default('utf8') }}"
     state: present
-  with_items: mariadb_users
+  with_items: mariadb_databases
